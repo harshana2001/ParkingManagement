@@ -1,0 +1,23 @@
+<style>
+
+.button{
+    -fx-background-color: #73058c;
+    -fx-text-fill : #ffffff;
+    -fx-font-family : Verdana;
+}
+
+.button:hover{
+	-fx-background-color : #53056c;
+	-fx-text-fill : #ffffff;
+	-fx-border-width : 0px 0px 0px 10px;
+	-fx-border-color : #ffffff;
+}
+
+.button:focused{
+	-fx-background-color : #ffffff;
+	-fx-text-fill : #73058c;
+	-fx-border-width : 0px 0px 0px 10px;
+	-fx-border-color : #73058c;
+}
+
+</style>

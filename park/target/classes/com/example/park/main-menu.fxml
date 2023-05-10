@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.park.MainMenuController">
+   <children>
+      <AnchorPane layoutX="249.0" prefHeight="600.0" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox fx:id="RunTab" maxWidth="-Infinity" prefWidth="610.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="250.0">
+               <children>
+                  <StackPane fx:id="TabWindow" maxWidth="-Infinity" prefWidth="610.0">
+                     <children>
+                        <GridPane fx:id="SearchTab" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="300.0" prefWidth="610.0" style="-fx-background-color: #ffffff;">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="435.79998779296875" minWidth="10.0" prefWidth="435.79998779296875" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="249.4000244140625" minWidth="174.20001220703125" prefWidth="174.20001220703125" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="329.59999999999997" minHeight="10.0" prefHeight="23.19998779296875" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="329.59999999999997" minHeight="10.0" prefHeight="27.399999999999995" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="329.59999999999997" minHeight="10.0" prefHeight="253.79999999999998" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <TextField fx:id="searchText" promptText="Enter Vehicle Number" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="20.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextArea fx:id="searchResult" prefHeight="288.0" prefWidth="478.0" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets left="20.0" top="20.0" />
+                                 </GridPane.margin>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextArea>
+                              <JFXButton onAction="#onSearchButtonCLick" prefHeight="26.0" prefWidth="100.0" style="-fx-background-color: #73058c;" stylesheets="@style.css" text="Search" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" glyphName="PLUS" />
+                                 </graphic>
+                                 <font>
+                                    <Font name="Verdana Bold" size="11.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="20.0" />
+                                 </GridPane.margin>
+                              </JFXButton>
+                              <Label fx:id="searchMessage" alignment="CENTER" textFill="RED">
+                                 <GridPane.margin>
+                                    <Insets left="50.0" />
+                                 </GridPane.margin>
+                              </Label>
+                           </children>
+                        </GridPane>
+                        <GridPane fx:id="DashboardTab" maxWidth="-Infinity" prefWidth="610.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="329.59999999999997" minHeight="10.0" prefHeight="305.59998474121096" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <TableView fx:id="VehicleTable" maxWidth="-Infinity" prefWidth="610.0" />
+                           </children>
+                        </GridPane>
+                        <GridPane fx:id="NewVehicleTab" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="300.0" prefWidth="610.0" style="-fx-background-color: #ffffff;">
+                          <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="463.19996337890626" minWidth="10.0" prefWidth="462.40003662109376" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="300.20001220703125" minWidth="148.00003662109378" prefWidth="148.79996337890628" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints maxHeight="302.1999877929687" minHeight="10.0" prefHeight="297.6000061035156" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="302.1999877929687" minHeight="10.0" prefHeight="297.6000061035156" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="302.1999877929687" minHeight="10.0" prefHeight="297.6000061035156" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="302.1999877929687" minHeight="10.0" prefHeight="297.6000061035156" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="302.1999877929687" minHeight="10.0" prefHeight="297.6000061035156" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="302.1999877929687" minHeight="10.0" prefHeight="297.6000061035156" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <JFXButton onAction="#onAddButtonCLick" prefHeight="26.0" prefWidth="100.0" style="-fx-background-color: #73058c;" stylesheets="@style.css" text="Add" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" glyphName="PLUS" />
+                                 </graphic>
+                                 <font>
+                                    <Font name="Verdana Bold" size="11.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="20.0" />
+                                 </GridPane.margin>
+                              </JFXButton>
+                              <TextField fx:id="vehiNumber" promptText="Vehicle Number" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="150.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="ownerId" promptText="Enter your NIC or License Number" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets left="150.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="ownerName" promptText="Owner Name" GridPane.rowIndex="3">
+                                 <GridPane.margin>
+                                    <Insets left="150.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <Label alignment="CENTER" text="VEHICLE NUMBER :" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                                 <font>
+                                    <Font name="Verdana Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" text="OWNER ID :" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Verdana Bold" size="12.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label alignment="CENTER" text="OWNER NAME :" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="Verdana Bold" size="12.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label fx:id="DataEntryMessage" textFill="#15a41c">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="20.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label alignment="CENTER" text="VEHICLE TYPE :" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font name="Verdana Bold" size="12.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <ComboBox fx:id="vehicleType" prefWidth="150.0" promptText="Vehicle Type" GridPane.rowIndex="4">
+                                 <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                       <String fx:id="Car" fx:value="Car" />
+                                       <String fx:id="Bike" fx:value="Bike" />
+                                    </FXCollections>
+                                 </items>
+                                 <GridPane.margin>
+                                    <Insets left="150.0" />
+                                 </GridPane.margin>
+                              </ComboBox>
+                           </children>
+                        </GridPane>
+                        <GridPane fx:id="CheckoutTab" maxWidth="-Infinity" prefWidth="610.0" style="-fx-background-color: #ffffff;" stylesheets="@style.css">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="329.59999999999997" minHeight="10.0" prefHeight="62.40001831054687" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="329.59999999999997" minHeight="10.0" prefHeight="91.8" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="329.59999999999997" minHeight="10.0" prefHeight="122.59999999999997" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="329.59999999999997" minHeight="10.0" prefHeight="74.60000000000002" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <TextField fx:id="checkoutNum" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="200.0" right="50.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextArea fx:id="checkoutMessage" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets left="200.0" right="50.0" />
+                                 </GridPane.margin>
+                              </TextArea>
+                              <JFXButton id="button1" fx:id="Exit" alignment="CENTER" onAction="#onCheckoutButtonClick" style="-fx-background-color: #73058c;" stylesheets="@style.css" text="CHECKOUT" textFill="WHITE" GridPane.rowIndex="3">
+                                 <GridPane.margin>
+                                    <Insets left="400.0" />
+                                 </GridPane.margin>
+                              </JFXButton>
+                              <Label prefHeight="42.0" prefWidth="178.0" text="ENTER VEHICLE NUMBER :" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Verdana Bold" size="12.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </StackPane>
+               </children>
+            </VBox>
+            <Pane layoutY="76.0" prefHeight="94.0" prefWidth="650.0" style="-fx-background-color: #73058c;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <Label fx:id="menuName" layoutX="47.0" layoutY="14.0" style="-fx-font-family: Verdana; -fx-font-weight: Bold;" text="DASHBOARD" textFill="WHITE">
+                     <font>
+                        <Font size="45.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children></AnchorPane>
+      <AnchorPane prefHeight="600.0" prefWidth="250.0" style="-fx-background-color: #73058c;" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <JFXButton fx:id="btnSearch" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="20.0" layoutX="-1.0" layoutY="269.0" onAction="#handleClicks" prefHeight="50.0" prefWidth="250.0" text="SEARCH" textAlignment="CENTER" textFill="#f2eded">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <graphic>
+                  <FontAwesomeIcon fill="#f7f3f3" glyphName="SEARCH" selectionFill="#e4dede" size="24" wrappingWidth="27.028608322143555" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btnCheckout" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="20.0" layoutX="-1.0" layoutY="319.0" onAction="#handleClicks" prefHeight="50.0" prefWidth="250.0" text="EXIT VEHICLE" textAlignment="CENTER" textFill="#f2eded">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <graphic>
+                  <FontAwesomeIcon fill="#f7f3f3" glyphName="MONEY" selectionFill="#e4dede" size="24" textAlignment="CENTER" wrappingWidth="27.028608322143555" />
+               </graphic>
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="20.0" layoutX="-1.0" layoutY="532.0" onAction="#onLogoutButtonClick" prefHeight="67.0" prefWidth="250.0" text="LOG OUT" textAlignment="CENTER" textFill="#f2eded" AnchorPane.bottomAnchor="0.0">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <graphic>
+                  <FontAwesomeIcon fill="#f7f3f3" glyphName="ARROW_LEFT" selectionFill="#e4dede" size="24" wrappingWidth="27.028608322143555" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btnDashboard" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="20.0" layoutX="-1.0" layoutY="169.0" onAction="#handleClicks" prefHeight="50.0" prefWidth="250.0" text="DASHBOARD" textAlignment="CENTER" textFill="#f2eded">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <graphic>
+                  <FontAwesomeIcon fill="#f7f3f3" glyphName="HOME" selectionFill="#e4dede" size="24" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btnNewVehicle" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="20.0" layoutX="-1.0" layoutY="219.0" onAction="#handleClicks" prefHeight="50.0" prefWidth="250.0" text="NEW VEHICLE" textAlignment="CENTER" textFill="#f2eded">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <graphic>
+                  <FontAwesomeIcon fill="#f7f3f3" glyphName="PLUS" selectionFill="#e4dede" size="24" wrappingWidth="27.028608322143555" />
+               </graphic>
+            </JFXButton>
+            <ImageView fitHeight="50.0" fitWidth="41.0" layoutX="14.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../img/add-64.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="58.0" layoutY="65.0" text="ABC PARKING" textFill="WHITE">
+               <font>
+                  <Font name="Orbitron Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </AnchorPane>
+   </children>
+</AnchorPane>
